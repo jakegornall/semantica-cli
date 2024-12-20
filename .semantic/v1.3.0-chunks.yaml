@@ -1,0 +1,70 @@
+metadata:
+  generated_at: 2024-12-17T19:21:17.931Z
+  chunk_count: 3
+  version: 1.3.0
+reasoning_and_planning:
+  - First, I'll analyze the README.md as it's the primary source of user-facing documentation
+  - The package.json reveals this is a CLI tool for generating semantic documentation chunks, so I'll focus on command usage and configuration
+  - The src/index.js file is the entry point and orchestrates the chunk generation process, which is crucial for understanding how to use the package
+  - The bin/semantica.js file defines the CLI commands, which are directly relevant to the user
+  - The src/yamlGenerator.js, src/training.js, and src/aiProvider.js files contain internal logic for generating and syncing chunks, which are not directly exposed to the user
+  - The src/schemas.js file defines schemas for validation, which are important for understanding data structures but not directly used by the user
+  - I'll create an overview chunk to help users get started quickly
+  - Then I'll create individual API chunks for each CLI command exposed in bin/semantica.js
+  - I'll ignore internal helper functions and implementation details as they're not part of the public API
+  - The testing files and internal utility functions don't need documentation as they're not relevant to package users
+chunks:
+  - title: Getting Started with Semantica
+    description: |-
+      Semantica is a CLI tool designed to generate semantic documentation chunks from your codebase using AI. It leverages GPT-4o to analyze your source code, documentation, and README files, creating user-focused documentation optimized for vector database storage and semantic search.
+
+      Key features include:
+      - User-focused documentation
+      - Practical examples and common use cases
+      - Clear installation and setup instructions
+      - Semantic search optimization
+
+      Semantica is ideal for enhancing documentation sites, training AI assistants, powering IDE plugins, and improving search systems.
+    examples:
+      - code: |-
+          npm install -g semantica
+
+          semantica chunk
+        explanation: This example shows how to install Semantica globally and generate semantic chunks from your codebase using the 'chunk' command.
+    tags:
+      - getting-started
+      - overview
+      - installation
+      - CLI
+      - documentation
+    generated_timestamp: '2024-12-17T19:21:17.931Z'
+    approved: false
+  - title: Chunk Command
+    description: |-
+      The 'chunk' command in Semantica is used to generate semantic documentation chunks from your codebase. It scans your project for relevant files, processes them through GPT-4o, and saves the generated chunks in the `.semantic` directory.
+
+      This command is essential for keeping your documentation up-to-date and optimized for semantic search.
+    examples:
+      - code: semantica chunk
+        explanation: Running this command will initiate the process of generating semantic documentation chunks from your codebase.
+    tags:
+      - CLI
+      - command
+      - chunk
+      - documentation
+      - generation
+    generated_timestamp: '2024-12-17T19:21:17.931Z'
+    approved: false
+  - title: Sync Command
+    description: The 'sync' command in Semantica is used to synchronize approved documentation chunks to the training data. It ensures that your training data is up-to-date with the latest documentation changes, which is crucial for maintaining accurate AI models.
+    examples:
+      - code: semantica sync
+        explanation: This command will sync the approved chunks to the training data, ensuring that your AI models are using the latest documentation.
+    tags:
+      - CLI
+      - command
+      - sync
+      - training
+      - data
+    generated_timestamp: '2024-12-17T19:21:17.931Z'
+    approved: false

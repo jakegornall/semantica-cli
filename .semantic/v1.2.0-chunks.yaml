@@ -1,0 +1,74 @@
+metadata:
+  generated_at: 2024-12-16T15:31:19.088Z
+  chunk_count: 3
+  version: 1.2.0
+reasoning_and_planning:
+  - First, I'll analyze the README.md as it's the primary source of user-facing documentation
+  - The package.json reveals this is a CLI tool for generating semantic documentation chunks, so I'll focus on CLI commands.
+  - The src/index.js and bin/semantica.js files are crucial as they define the main CLI commands and their functionality
+  - The src/yamlGenerator.js and src/training.js files provide utility functions for generating YAML files and syncing training data, however, the functions themselves are not part of the public API.
+  - The src/schemas.js file defines the public schemas used for validation, which users might need to understand
+  - The src/aiProvider.js file is important as it handles the interaction with the OpenAI API, which is a key feature
+  - I'll create an overview chunk first to help users get started quickly
+  - Then I'll create individual API chunks for each CLI command
+  - I'll ignore internal helper functions in utils/ and chunker.js as they're not part of the public API
+  - The testing files don't need documentation as they're not relevant to package users
+  - I see some advanced usage patterns in the README that should be documented separately
+chunks:
+  - title: Getting Started with Semantica
+    description: |-
+      Semantica is a CLI tool designed to generate semantic documentation chunks from your codebase using AI. It leverages GPT-4o to analyze source code, documentation, and README files to create user-focused documentation optimized for vector database storage and semantic search.
+
+      Key features include:
+      - User-focused documentation
+      - Practical examples and common use cases
+      - Clear installation and setup instructions
+      - Semantic search optimization
+
+      Installation can be done globally via npm for easy access across projects or as a dev dependency for project-specific usage. Semantica is particularly useful for documentation sites, AI assistants, IDE plugins, and search systems.
+    examples:
+      - code: |-
+          npm install -g semantica
+
+          # Add to package.json scripts
+          {
+            "scripts": {
+              "chunk": "semantica chunk"
+            }
+          }
+        explanation: This example shows how to install Semantica globally and add a script to your package.json for generating documentation chunks.
+    tags:
+      - getting-started
+      - overview
+      - installation
+      - cli
+      - documentation
+    generated_timestamp: '2024-12-16T15:31:19.088Z'
+    approved: true
+  - title: Chunk Command
+    description: |-
+      The `chunk` command is used to generate semantic documentation chunks from your codebase. It scans relevant files, filters out unnecessary content, and processes them through GPT-4o to create documentation chunks that are saved in the `.semantic` directory.
+
+      This command is essential for creating up-to-date documentation that is user-focused and optimized for semantic search.
+    examples:
+      - code: semantica chunk
+        explanation: Running this command will generate semantic documentation chunks and save them in the `.semantic` directory of your project.
+    tags:
+      - cli
+      - command
+      - documentation
+      - generation
+    generated_timestamp: '2024-12-16T15:31:19.088Z'
+    approved: true
+  - title: Sync Command
+    description: The `sync` command synchronizes approved documentation chunks to training data. It ensures that the latest chunks and their reasoning are integrated into the training data for AI models, maintaining consistency and accuracy across versions.
+    examples:
+      - code: semantica sync
+        explanation: This command syncs the approved documentation chunks to the training data, updating the `.training` directory with the latest information.
+    tags:
+      - cli
+      - command
+      - sync
+      - training-data
+    generated_timestamp: '2024-12-16T15:31:19.088Z'
+    approved: true
