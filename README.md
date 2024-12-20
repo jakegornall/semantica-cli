@@ -12,10 +12,14 @@ Traditional documentation often focuses on implementation details rather than ho
 - Provide clear installation and setup instructions
 - Are optimized for semantic search
 
-## Installation 
-Install globally
+## Installation
+
+Install globally:
+
 `npm install -g semantica`
-Or install as a dev dependency
+
+Or install as a dev dependency:
+
 `npm install --save-dev semantica`
 
 ## Quick Start
