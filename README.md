@@ -1,4 +1,4 @@
-# Semantica
+# Semantica-CLI
 
 Semantica is a CLI tool that generates semantic documentation chunks from your codebase using AI. It analyzes your source code, documentation, and README files to create user-focused documentation that's optimized for vector database storage and semantic search.
 
