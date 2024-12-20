@@ -61,12 +61,13 @@ Under the hood, Semantica:
 
 Semantica creates a `.semantic` directory in your project root that contains versioned YAML files:
 
+```
 your-project/
 ├── .semantic/
 │ ├── v1.0.0-chunks.yaml
 │ ├── v1.0.1-chunks.yaml
 │ └── v2.0.0-chunks.yaml
-
+```
 Each YAML file is named using your package's version (from package.json) and contains:
 
 ```yaml
