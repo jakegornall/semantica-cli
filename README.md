@@ -21,7 +21,7 @@ Or install as a dev dependency
 ## Quick Start
 
 1. Add the script to your `package.json`:
-json```
+```json
 {
     "scripts": {
         "chunk": "semantica chunk"
@@ -65,7 +65,7 @@ your-project/
 
 Each YAML file is named using your package's version (from package.json) and contains:
 
-yaml```
+```yaml
 metadata:
     generated_at: "2024-03-20T12:00:00.000Z"
     chunk_count: 42
